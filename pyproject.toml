@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-scanner"
+version = "0.1.0"
+description = "Network scanner for discovering HTTP-exposed MCP servers and listing their tools."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "mcp-scanner contributors" }
+]
+dependencies = []
+
+[project.scripts]
+mcp-scan = "mcp_scanner.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcp_scanner*"]
