@@ -177,41 +177,6 @@ For local or third-party scripts this URL may not exist. It will only become a
 real NSEDoc page if the script is accepted into Nmap's upstream script tree and
 the public NSE documentation is regenerated.
 
-## Upstreaming to Nmap
-
-Nmap accepts contributions through GitHub pull requests and the development
-mailing list.
-
-Recommended process:
-
-1. Fork the official Nmap repository: <https://github.com/nmap/nmap>
-2. Add `mcp-info.nse` under `scripts/`.
-3. Keep the script self-contained, safe by default, and compatible with Nmap's
-   Lua/NSE libraries.
-4. Use Nmap's license line in the script:
-
-   ```lua
-   license = "Same as Nmap--See https://nmap.org/book/man-legal.html"
-   ```
-
-5. Run basic validation:
-
-   ```bash
-   nmap --script-help ./scripts/mcp-info.nse
-   nmap -Pn -p <port> --script ./scripts/mcp-info.nse <target>
-   ```
-
-6. Open a pull request against <https://github.com/nmap/nmap>.
-7. Send a short notification email to `dev@nmap.org` with the pull request link,
-   the problem the script solves, supported MCP transports, and example output.
-
-Useful official references:
-
-- Nmap contribution guide: <https://github.com/nmap/nmap/blob/master/CONTRIBUTING.md>
-- Nmap hacking guide: <https://github.com/nmap/nmap/blob/master/HACKING>
-- Nmap development mailing list: <https://nmap.org/mailman/listinfo/dev>
-- NSE script format: <https://nmap.org/book/nse-script-format.html>
-
 ## Safety Notes
 
 - Scan only hosts and networks where you have authorization.
